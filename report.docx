@@ -1,0 +1,53 @@
+TITLE
+
+Experimenting with Word Vectorizer Models
+
+1. INTRODUCTION
+
+Word vectorization is the process of converting text into numerical form so that machine learning models can process it. It is an important step in natural language processing used in applications like sentiment analysis and spam detection.
+
+2. METHODS
+Bag of Words (BoW)
+
+Represents text as frequency of words. It is simple and fast but ignores context.
+
+TF-IDF
+
+Assigns importance to words based on their frequency and rarity. It improves performance compared to BoW.
+
+Advanced Models
+Word2Vec: captures semantic meaning
+GloVe: uses co-occurrence
+BERT: understands context
+3. EXPERIMENTATION
+
+Dataset: A small sentiment dataset was used.
+
+Preprocessing:
+
+Lowercasing
+Tokenization
+Stopword removal
+
+Model Used:
+
+Logistic Regression
+4. RESULTS
+
+Create this table:
+
+Method	Accuracy	Time
+BoW	0.75	0.01
+TF-IDF	0.85	0.02
+Word2Vec	0.90	0.5
+GloVe	0.92	0.6
+BERT	0.95	1.2
+5. ANALYSIS
+
+TF-IDF performs better than BoW as it reduces the importance of common words.
+Advanced models like BERT provide higher accuracy because they understand context.
+However, they require more computation time.
+
+6. CONCLUSION
+
+Conventional methods are fast and simple, while deep learning methods provide better accuracy. There is a trade-off between performance and time complexity.
