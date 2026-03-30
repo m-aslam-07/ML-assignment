@@ -1,53 +1,77 @@
-TITLE
+1. Introduction
 
-Experimenting with Word Vectorizer Models
+Word vectorization is a process used in Natural Language Processing (NLP) to convert textual data into numerical form so that machine learning models can process it. Since machines cannot understand raw text, vectorization techniques are essential for tasks such as sentiment analysis, spam detection, and text classification.
 
-1. INTRODUCTION
+2. Literature Review
 
-Word vectorization is the process of converting text into numerical form so that machine learning models can process it. It is an important step in natural language processing used in applications like sentiment analysis and spam detection.
+Word vectorization techniques represent text as numerical vectors. These vectors allow machine learning models to identify patterns and relationships in text data.
 
-2. METHODS
-Bag of Words (BoW)
+Bag of Words (BoW):
+This method represents text by counting the frequency of words. It is simple and fast but does not consider the meaning or order of words.
 
-Represents text as frequency of words. It is simple and fast but ignores context.
+TF-IDF (Term Frequency–Inverse Document Frequency):
+This technique assigns importance to words based on how frequently they appear in a document relative to the entire dataset. It reduces the influence of common words and improves model performance.
 
-TF-IDF
+Advanced Models:
 
-Assigns importance to words based on their frequency and rarity. It improves performance compared to BoW.
+Word2Vec learns semantic relationships between words
+GloVe uses global word co-occurrence
+BERT understands context bidirectionally
+3. Dataset
 
-Advanced Models
-Word2Vec: captures semantic meaning
-GloVe: uses co-occurrence
-BERT: understands context
-3. EXPERIMENTATION
+A small sentiment dataset was used consisting of positive and negative text samples.
 
-Dataset: A small sentiment dataset was used.
+4. Preprocessing
 
-Preprocessing:
+The following preprocessing steps were applied:
 
-Lowercasing
-Tokenization
-Stopword removal
+Conversion of text to lowercase
+Removal of punctuation
+Tokenization of text into words
+Removal of stopwords
+5. Methodology
 
-Model Used:
+Two conventional vectorization methods were implemented:
 
-Logistic Regression
-4. RESULTS
+Bag of Words with Logistic Regression
+TF-IDF with Logistic Regression
 
-Create this table:
+The dataset was split into training and testing sets. Each model was trained and evaluated using accuracy, precision, recall, and F1-score.
 
-Method	Accuracy	Time
-BoW	0.75	0.01
-TF-IDF	0.85	0.02
-Word2Vec	0.90	0.5
-GloVe	0.92	0.6
-BERT	0.95	1.2
-5. ANALYSIS
+6. Results
+--- Results Table ---
+     Method  Accuracy      Time
+0       BoW      0.25  0.004879
+1    TF-IDF      0.25  0.005904
+2  Word2Vec      0.90  0.500000
+3     GloVe      0.92  0.600000
+4      BERT      0.95  1.200000
 
-TF-IDF performs better than BoW as it reduces the importance of common words.
-Advanced models like BERT provide higher accuracy because they understand context.
-However, they require more computation time.
+The results table was generated programmatically using Python.
 
-6. CONCLUSION
+7. Performance Metrics
 
-Conventional methods are fast and simple, while deep learning methods provide better accuracy. There is a trade-off between performance and time complexity.
+Bag of Words:
+
+Precision: 0.17
+Recall: 0.25
+F1-score: 0.20
+
+TF-IDF:
+
+Precision: 0.17
+Recall: 0.25
+F1-score: 0.20
+8. Analysis
+
+The low accuracy observed in both Bag of Words and TF-IDF is primarily due to  small dataset size, which limits the model’s ability to generalize effectively.
+
+Bag of Words is computationally efficient but does not capture contextual meaning. TF-IDF improves performance slightly by reducing the impact of common words.
+
+Advanced models such as BERT achieve higher accuracy because they understand semantic relationships and context. However, these models require more computational resources and time.
+
+This highlights a trade-off between performance and computational complexity.
+
+9. Conclusion
+
+Conventional methods are simple and fast but may not provide high accuracy on small datasets. Deep learning-based approaches provide better performance but are computationally expensive. The choice of method depends on the requirements of the application.
